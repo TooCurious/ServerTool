@@ -63,4 +63,4 @@ def get_order_status_tool(order_id: str) -> OrderResponse:
 
 
 if __name__ == "__main__":
-    mcp.run(host="0.0.0.0", port=5005)
+    mcp.run(transport="streamable-http", host="0.0.0.0", port=5005)
