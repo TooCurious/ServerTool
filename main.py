@@ -3,11 +3,12 @@ from pydantic import BaseModel, Field
 from typing import Optional
 
 
-mcp = FastMCP("StatelessServer",
-               stateless_http=True,
-                 json_response=True,
-                 name="OrderStatusMCP",
-                 description="MCP Server for retrieving order status information.")
+mcp = FastMCP(
+    name="OrderStatusMCP",
+    description="MCP Server for retrieving order status information.",
+    stateless_http=True,
+    json_response=True
+)
 
 
 ORDERS = [
