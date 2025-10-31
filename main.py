@@ -5,7 +5,6 @@ from typing import Optional
 
 mcp = FastMCP(
     name="OrderStatusMCP",
-    description="MCP Server for retrieving order status information.",
     stateless_http=True,
     json_response=True
 )
