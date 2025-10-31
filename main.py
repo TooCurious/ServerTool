@@ -38,14 +38,8 @@ class OrderResponse(BaseModel):
     eta_days: Optional[int]
 
 
-@mcp.tool(
-    name="get_order_status",
-    description="Retrieves the status and estimated delivery time (in days) for a given order ID. Returns 'None' for eta_days if not applicable.",
-    input_type=OrderRequest,
-    output_type=OrderResponse
-)
 
-
+@mcp.tool()
 def get_order_status_tool(order_id: str) -> OrderResponse:
     """
     Инструмент (tool) для получения статуса заказа.
