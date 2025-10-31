@@ -1,0 +1,6 @@
+services:
+  mcp:
+    container_name: mcp_servers
+    build:
+      context: .
+
