@@ -1,7 +1,7 @@
-from fastmcp import App, Tool
+from fastmcp import FastMCP
 from pydantic import BaseModel, Field
-from typing import List, Optional
-from mcp.server.fastmcp import FastMCP
+from typing import Optional
+
 
 mcp = FastMCP("StatelessServer",
                stateless_http=True,
