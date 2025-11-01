@@ -3,11 +3,8 @@ from pydantic import BaseModel, Field
 from typing import Optional
 
 
-mcp = FastMCP(
-    name="OrderStatusMCP",
-    stateless_http=True,
-    json_response=True
-)
+mcp = FastMCP("Personal Information Detection", host="0.0.0.0", port=5005)
+
 
 
 ORDERS = [
@@ -52,9 +49,8 @@ def get_order_status_tool(order_id: str) -> OrderResponse:
             eta_days=order["eta_days"]
         )
     else:
-        # Возвращаем ошибку, если заказ не найден
         raise ValueError(f"Order with ID {order_id} not found.")
 
 
 if __name__ == "__main__":
-    mcp.run(transport="streamable-http", host="0.0.0.0", port=5005)
+    mcp.run(transport="streamable-http")
